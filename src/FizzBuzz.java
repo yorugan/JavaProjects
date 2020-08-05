@@ -12,17 +12,17 @@ public class FizzBuzz
 
         for(int i = 1; i<numberToBeCalculated+1; i++)
         {
-            if(i%3 == 0 && i%5 == 0)
+            if(i%3 == 0 && i%5 == 0)  //Calculates FizzBuzz whenever the number is divisible by 3 or 5
             {
                 System.out.println("FizzBuzz");
                 fizzBuzzCounter++;
             }else if(i%3 == 0)
             {
-                System.out.println("Fizz");
+                System.out.println("Fizz"); //Calculates Fizz whenever the number is divisible by 3
                 fizzCounter++;
             }else if(i%5 == 0)
             {
-                System.out.println("Buzz");
+                System.out.println("Buzz"); //Calculates Buzz whenever the number is divisible by 5
                 buzzCounter++;
             }else
             {
