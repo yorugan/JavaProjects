@@ -1,10 +1,12 @@
+package com.company;
+
 import java.util.Scanner;
 
 public class FizzBuzz
 {
     public static void main(String args[])
     {
-        System.out.println("Welcome to FizzBuzz calculator. \nPlease enter a number you wish to calculate");
+        System.out.println("Welcome to com.company.FizzBuzz calculator. \nPlease enter a number you wish to calculate");
 
         Scanner input = new Scanner(System.in);
         int numberToBeCalculated = input.nextInt();
@@ -12,9 +14,9 @@ public class FizzBuzz
 
         for(int i = 1; i<numberToBeCalculated+1; i++)
         {
-            if(i%3 == 0 && i%5 == 0)  //Calculates FizzBuzz whenever the number is divisible by 3 or 5
+            if(i%3 == 0 && i%5 == 0)  //Calculates com.company.FizzBuzz whenever the number is divisible by 3 or 5
             {
-                System.out.println("FizzBuzz");
+                System.out.println("com.company.FizzBuzz");
                 fizzBuzzCounter++;
             }else if(i%3 == 0)
             {
@@ -31,6 +33,6 @@ public class FizzBuzz
         }
         System.out.printf("Total number of Fizz were: %d", fizzCounter);
         System.out.printf("\nTotal number of Buzz were: %d", buzzCounter);
-        System.out.printf("\nTotal number of FizzBuzz were: %d", fizzBuzzCounter);
+        System.out.printf("\nTotal number of com.company.FizzBuzz were: %d", fizzBuzzCounter);
     }
 }
