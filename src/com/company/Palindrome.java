@@ -23,7 +23,8 @@ public class Palindrome
     public static boolean isPalindrome(String word)
     {
         String reversedString = "";
-        word.replaceAll("\\s+", "").toLowerCase();
+        word = word.replaceAll("\\s+", "").toLowerCase(); // removes white spaces input so we can check for palindrome
+
         for (int i = word.length() - 1; i >= 0; i--)
         {
             reversedString = reversedString + word.charAt(i);
