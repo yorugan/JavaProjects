@@ -1,50 +1,89 @@
 package cards;
 
+import java.util.List;
+import java.util.Arrays;
+import java.util.Collection;
+
 public class Card
 {
-    private final int rank; //rank of card ("A ,1 ,2 ,3 ..., K")
-    private final int suit; //suit of card ("♤, ♥, ♧, ◆")
-
-    //Types of suits
-    public final static int DIAMONDS = 1;
-    public final static int CLUBS = 2;
-    public final static int HEARTS = 3;
-    public final static int SPADES = 4;
-
-    // Types of ranks
-    public final static int ACE = 1;
-    public final static int TWO = 2;
-    public final static int THREE = 3;
-    public final static int FOUR = 4;
-    public final static int FIVE = 5;
-    public final static int SIX = 6;
-    public final static int SEVEN = 7;
-    public final static int EIGHT = 8;
-    public final static int NINE = 9;
-    public final static int TEN = 10;
-    public final static int JACK = 11;
-    public final static int QUEEN = 12;
-    public final static int KING = 13;
-
-    public Card(int cardRank, int cardSuit)
+    // Types of Ranks
+    public static enum Rank
     {
-        this.rank = cardRank; // initialize the face of card
+        ACE(1),
+        TWO(2),
+        THREE(3),
+        FOUR(4),
+        FIVE(5),
+        SIX(6),
+        SEVEN(7),
+        EIGHT(8),
+        NINE(9),
+        TEN(10),
+        JACK(11),
+        QUEEN(12),
+        KING(13);
+
+        private int rankValue;
+
+        Rank(int rankValues)
+        {
+            this.rankValue = rankValues;
+        }
+
+        public int getRankValue()
+        {
+            return this.rankValue;
+        }
+    }
+
+    // Types of Suits
+    public static enum Suit
+    {
+        DIAMONDS(1),
+        CLUBS(2),
+        HEARTS(3),
+        SPADES(4);
+
+        private int suitValue;
+
+        Suit(int suitValues)
+        {
+            this.suitValue = suitValues;
+        }
+
+        public int getSuitValue()
+        {
+            return this.suitValue;
+        }
+    }
+
+    private final Rank rank; //rank of card ("A ,1 ,2 ,3 ..., K")
+    private final Suit suit; //suit of card ("♤, ♥, ♧, ◆")
+
+    public Card(Rank cardRank, Suit cardSuit)
+    {
+        this.rank = cardRank; // initialize the rank of card
         this.suit = cardSuit; // initialize the suit of card
     }
 
-    public int getRank()
+    public Rank getRank()
     {
         return rank;
     }
 
-    public int getSuit()
+    public Suit getSuit()
     {
         return suit;
     }
 
-    public static String rankToString(int rank)
+    public String toString()
     {
-        switch (rank)
+        return String.format("%s of %s", rankToString(getRank()), suitToString(getSuit()));
+    }
+
+    public static String rankToString(Rank rankValue)
+    {
+        switch (rankValue)
         {
             case ACE:
                 return "A";
@@ -73,13 +112,13 @@ public class Card
             case KING:
                 return "K";
             default:
-                return  null;
+                return null;
         }
     }
 
-    public static String suitToString(int suit)
+    public static String suitToString(Suit suitValue)
     {
-        switch(suit)
+        switch (suitValue)
         {
             case DIAMONDS:
                 return "◆";
@@ -93,5 +132,4 @@ public class Card
                 return null;
         }
     }
-
 }
