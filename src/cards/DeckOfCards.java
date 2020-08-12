@@ -1,55 +1,69 @@
 package cards;
 
 import java.security.SecureRandom;
+import java.util.*;
 
 public class DeckOfCards
 {
-    private Card[] deck;
-    private int currentCard;
-    private static final int NUMBER_OF_CARDS = 52;
+    private List<Card> list;
 
+    private int currentCard;
+    private static final int NUMBER_OF_SUITS = 4;
+    private static final int NUMBER_OF_RANKS = 13;
+    private static final int NUMBER_OF_CARDS = NUMBER_OF_SUITS * NUMBER_OF_RANKS;
     private static final SecureRandom randomNumbers = new SecureRandom();
 
     public DeckOfCards()
     {
-        String[] faces = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
-        String[] suits = {"♤", "♥", "♧", "◆"};
+        int card = 0;
+        Card[] deck = new Card[NUMBER_OF_CARDS]; // Create an array of Card objects
 
-        deck = new Card[NUMBER_OF_CARDS]; // Create an array of Card objects
-        currentCard = 0; // First Card dealt will be from deck[0]
-
-        for (int count = 0; count < deck.length; count++) // populate the deck with Card objects
+        for (Card.Suit suit : Card.Suit.values()) // Populate the Deck with Card objects;
         {
-            deck[count] = new Card(faces[count % 13], suits[count / 13]);
+            for (Card.Rank rank : Card.Rank.values())
+            {
+                deck[card] = new Card(rank, suit);
+                ++card;
+            }
         }
+        list = new LinkedList<Card>(Arrays.asList(deck));
     }
 
     public void shuffle()
     {
         currentCard = 0;
+        Collections.shuffle(list);
+    }
 
-        for (int first = 0; first < deck.length; first++)
+    public void displayDeck()
+    {
+        for (int i = 0; i < list.size(); i++)
         {
-            //select a random number between 0 and 51
-            int second = randomNumbers.nextInt(NUMBER_OF_CARDS);
+            System.out.printf("%-19s%s", list.get(i), ((i + 1) % 4 == 0) ? "\n" : "");
+        }
+    }
 
-            // swaps the Card with randomly selected Card = shuffles the card
-            Card shuffleTemp = deck[first];
-            deck[first] = deck[second];
-            deck[second] = shuffleTemp;
+    public int sizeOf()
+    {
+        return list.size();
+    }
+
+    public void displayList()
+    {
+        ListIterator listIterator = list.listIterator();
+        while(listIterator.hasNext())
+        {
+            System.out.println(listIterator.next());
         }
     }
 
     public Card dealCard()
     {
-        // checks whether there are any Card left to be dealt
-        if (currentCard < deck.length)
-        {
-            return deck[currentCard++];
-        } else
-        {
-            return null;
-        }
+        ListIterator listIterator = list.listIterator();
+        Card card = (Card) listIterator.next();
+        listIterator.remove();
+
+        return card;
     }
 
 }

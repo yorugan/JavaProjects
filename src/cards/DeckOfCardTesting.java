@@ -1,23 +1,20 @@
 package cards;
 
-import java.util.concurrent.LinkedTransferQueue;
-
 public class DeckOfCardTesting
 {
     public static void main(String args[])
     {
         DeckOfCards cardDeck = new DeckOfCards();
-        cardDeck.shuffle();
+        Hand hand = new Hand();
 
-        for (int i = 1; i<= 52; i++)
-        {
-            System.out.printf("%-4s", cardDeck.dealCard());
+        System.out.println(cardDeck.sizeOf());
+        hand.addCard((Card) cardDeck.dealCard());
+        hand.addCard((Card) cardDeck.dealCard());
 
-            if(i % 4 == 0)
-            {
-                System.out.println();
-            }
-        }
+        hand.displayHand();
+
+        cardDeck.displayList();
+
     }
 
 }

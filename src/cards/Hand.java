@@ -1,14 +1,15 @@
 package cards;
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class Hand
 {
-    private ArrayList hand;
+    private ArrayList<Card> hand;
 
     public Hand()
     {
-        hand = new ArrayList();
+        hand = new ArrayList<Card>();
     }
 
     // Removes all cards from the hand
@@ -33,6 +34,15 @@ public class Hand
             throw new IllegalArgumentException("Position does not exist in hand");
         }
         hand.remove(position);
+    }
+
+    public void displayHand()
+    {
+        ListIterator listIterator = hand.listIterator();
+        while(listIterator.hasNext())
+        {
+            System.out.println(listIterator.next());
+        }
     }
 
 }
