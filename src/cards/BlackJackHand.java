@@ -37,5 +37,5 @@ public class BlackJackHand extends Hand
         }
 
         return value;
-    }:
+    }
 }
