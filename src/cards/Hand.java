@@ -45,4 +45,29 @@ public class Hand
         }
     }
 
+    public int getCardCount()
+    {
+        return hand.size();
+    }
+
+    public Card getCard(int position)
+    {
+        if(position < 0 || position >= hand.size())
+        {
+            throw new IllegalArgumentException("Position does not exist in hand");
+        }
+
+        return (Card)hand.get(position);
+    }
+
+    public Card getNewCard()
+    {
+        if(hand.isEmpty())
+        {
+            throw new IllegalArgumentException("Hand is empty");
+        }
+
+        return (Card)hand.get(hand.size() - 1);
+    }
+
 }
