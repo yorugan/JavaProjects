@@ -2,6 +2,7 @@ package cards;
 
 public class BlackJackHand extends Hand
 {
+
     public int getBlackJackValue()
     {
         int value;
