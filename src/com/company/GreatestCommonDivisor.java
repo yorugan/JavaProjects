@@ -3,6 +3,8 @@ package com.company;
 import java.util.Scanner;
 public class GreatestCommonDivisor
 {
+
+    // Using Euclid's algorithm to find a great common divisor
     public static int greatestCommonDivisor(int number1, int number2)
     {
         if (number2 == 0)
@@ -13,6 +15,7 @@ public class GreatestCommonDivisor
             return(greatestCommonDivisor(number2, number1 % number2));
         }
     }
+
 
     public static void main(String[] args)
     {
