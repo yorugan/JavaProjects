@@ -84,6 +84,8 @@ public class BlackJack
             return true;
         }
 
+        // Ask for user input whether to hit or stand
+
         while (true)
         {
             System.out.println("You currently have: ");
@@ -124,6 +126,8 @@ public class BlackJack
             }
         }
 
+        // if player stands, move onto dealers hand and deals the card to the dealer
+
         System.out.println("Player stands.");
         System.out.println("Dealer's cards are: ");
         dealerHand.displayHand();
@@ -140,6 +144,8 @@ public class BlackJack
         }
 
         System.out.println("Dealer's total value of the cards are " + dealerHand.getBlackJackValue() + "\n");
+
+        // Checks for dealers value of card
 
         if (dealerHand.getBlackJackValue() == playerHand.getBlackJackValue())
         {
