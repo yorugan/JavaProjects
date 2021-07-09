@@ -1,5 +1,7 @@
 package SchoolManagementSystem;
 
+import java.util.Locale;
+
 public class Person {
     private String firstName;
     private String lastName;
@@ -36,4 +38,23 @@ public class Person {
     public void setId(int id) {
         this.id = id;
     }
+
+    public void setGender(String gender)
+    {
+        if(gender.toLowerCase() == "male" || gender.toLowerCase() == "m")
+        {
+            this.gender = "Male";
+        }else if(gender.toLowerCase() == "female" || gender.toLowerCase() == "f")
+        {
+            this.gender = gender;
+        }else{
+            this.gender = "I do not wish to self-identify";
+        }
+    }
+
+    public String getGender()
+    {
+        return gender;
+    }
+
 }
