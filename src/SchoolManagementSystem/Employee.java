@@ -1,7 +1,5 @@
 package SchoolManagementSystem;
 
-import java.util.Locale;
-
 public class Employee {
     private String firstName;
     private String lastName;

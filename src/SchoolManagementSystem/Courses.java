@@ -24,7 +24,14 @@ public class Courses {
     }
 
 
-    // delete courses
+    // remove courses
+
+    public void removeCourse(String course)
+    {
+        courses.remove(course);
+    }
+
+
     //
 
 }

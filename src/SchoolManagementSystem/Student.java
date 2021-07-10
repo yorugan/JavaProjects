@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Student extends Employee {
 
     private int feesPaid;
-    private int feesTotal;
+    private static int feesTotal = 5000;
     private String grade;
     private ArrayList<String> courses;
     private int gradeYear;
