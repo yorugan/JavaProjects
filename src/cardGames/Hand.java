@@ -1,4 +1,4 @@
-package cards;
+package cardGames;
 
 import java.util.ArrayList;
 import java.util.ListIterator;
@@ -12,7 +12,7 @@ public class Hand
         hand = new ArrayList<Card>();
     }
 
-    // Removes all cards from the hand
+    // Removes all cardGames from the hand
     public void clear()
     {
         hand.clear();

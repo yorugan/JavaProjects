@@ -2,13 +2,13 @@ package SchoolManagementSystem;
 
 import java.util.Locale;
 
-public class Person {
+public class Employee {
     private String firstName;
     private String lastName;
     private int id;
     private String gender;
 
-    public Person(int id, String firstName, String lastName, String gender) {
+    public Employee(int id, String firstName, String lastName, String gender) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -34,6 +34,8 @@ public class Person {
     public int getId() {
         return id;
     }
+
+    // validate data incoming so that it can only accept integers
 
     public void setId(int id) {
         this.id = id;

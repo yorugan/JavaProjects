@@ -1,4 +1,4 @@
-package cards;
+package cardGames;
 
 public class BlackJackHand extends Hand
 {
@@ -8,13 +8,13 @@ public class BlackJackHand extends Hand
         int value;
         boolean ace;
 
-        int cards;
+        int cardGames;
 
         value = 0;
         ace = false;
-        cards = getCardCount();
+        cardGames = getCardCount();
 
-        for(int i = 0; i < cards; i++)
+        for(int i = 0; i < cardGames; i++)
         {
             Card card;
             int cardValue;

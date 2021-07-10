@@ -1,8 +1,4 @@
-package cards;
-
-import java.util.List;
-import java.util.Arrays;
-import java.util.Collection;
+package cardGames;
 
 public class Card
 {

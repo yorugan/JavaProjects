@@ -1,16 +1,18 @@
 package SchoolManagementSystem;
 
+import java.util.ArrayList;
+
 /**
  * Student class to keep the track of students grade, fees, identification, name
  * */
 
 
-public class Student extends Person {
+public class Student extends Employee {
 
     private int feesPaid;
     private int feesTotal;
     private String grade;
-    private String[] courses;
+    private ArrayList<String> courses;
     private int gradeYear;
 
 
@@ -19,11 +21,12 @@ public class Student extends Person {
 
     }
 
+    // Sets student id
+    // Gotta add validation
+
     public void setStudentId(int id) {
         setId(id + 1);
     }
 
-    public void addCourse(String course) {
 
-    }
 }

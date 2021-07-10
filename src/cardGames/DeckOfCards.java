@@ -1,4 +1,4 @@
-package cards;
+package cardGames;
 
 import java.security.SecureRandom;
 import java.util.*;

@@ -1,4 +1,4 @@
-package cards;
+package cardGames;
 
 public class DeckOfCardTesting
 {
